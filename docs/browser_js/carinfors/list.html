@@ -39,10 +39,8 @@
       <div class="row">
         <div class="col">
           <h2>Search</h2>
-          <form class="form-inline">
-            <input type="text" class="form-control mr-2" placeholder="Search">
-            <button type="submit" class="btn btn-primary">Go</button>
-          </form>
+            <input type="text" class="form-control mr-2" placeholder="Search" id="keydownEnter">
+            <button type="button" class="btn btn-primary" onclick="getSelectAllFromREST()">Go</button>
         </div>
       </div>
 
@@ -58,7 +56,8 @@
                 <th>COMPANY_ID</th>
               </tr>
             </thead>
-            <tbody id="example">
+            <tbody id="example3">
+              <!-- Empty -->
             <!-- carinfor.js 에서 레코드 추가 -->
             </tbody>
           </table>
@@ -101,8 +100,9 @@
   <script>
     document.addEventListener("DOMContentLoaded", function() {
       const tableRows = document.querySelectorAll("tbody tr");
-      const recordsPerPage = 2;
+      const recordsPerPage = 3;
       let currentPage = 1;
+
 
       function showPage(page) {
         const startIndex = (page - 1) * recordsPerPage;
@@ -113,7 +113,7 @@
             row.style.display = "table-row";
           } else {
             row.style.display = "none";
-          }
+          }        
         });
       }
 
@@ -168,5 +168,7 @@
     });
   </script>
 </body>
-<script src="../js/carinforwithfubction.js"></script>
+<!-- <script src="../js/carinforwithfubction.js"></script> -->
+<script src="../js/fetchs.js"></script>
+
 </html>
